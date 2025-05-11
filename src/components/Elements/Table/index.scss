@@ -1,0 +1,234 @@
+@use '../../../assets/style/colors';
+
+div.table {
+
+    >.header {
+        display: flex;
+        width: 100%;
+        background-color: #ffffff20;
+        border-radius: 5px;
+
+        >.selectable {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 42px;
+            cursor: pointer;
+        }
+
+        >.cells {
+            display: flex;
+            width: 100%;
+
+            &.cell:first {
+                background-color: red !important;
+            }
+
+            >.cell {
+                font-size: 1rem;
+                font-weight: 700;
+                padding: 3px;
+                border-radius: 5px;
+                display: flex;
+                align-items: center;
+
+                &.sortable {
+                    cursor: pointer;
+
+                    &:hover {
+                        background-color: #ffffff30;
+                    }
+                }
+
+                &.left {
+                    justify-content: flex-start;
+                    text-align: start;
+                }
+
+                &.center {
+                    justify-content: center;
+                    text-align: center;
+                }
+
+                &.right {
+                    justify-content: flex-end;
+                    text-align: end;
+                }
+            }
+        }
+
+        >.functions {
+            width: 28px;
+        }
+
+        >.scroll {
+            width: 8px;
+        }
+    }
+
+    >.body {
+        position: relative;
+        overflow-x: hidden;
+        overflow-y: scroll;
+
+        >.row {
+            display: flex;
+            background-color: #ffffff40;
+            border-radius: 5px;
+            border-left: 5px solid transparent;
+
+            &:hover {
+                background-color: #ffffff10;
+
+                &:not(.status) {
+                    border-left-color: transparent;
+                }
+
+                >.functions .body {
+                    width: 500px;
+                }
+            }
+
+            >.selectable {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 42px;
+            }
+
+            >.cells {
+                display: flex;
+                align-items: center;
+                width: 100%;
+
+                >.cell {
+                    font-size: 14px;
+                    display: flex;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    padding: 0 3px;
+
+                    &.left {
+                        justify-content: flex-start;
+                    }
+
+                    &.right {
+                        justify-content: flex-end;
+                    }
+
+                    &.center {
+                        justify-content: center;
+                    }
+
+                    &.between {
+                        justify-content: space-between;
+                    }
+
+                    &.tiny {
+                        font-size: 0.6rem;
+                    }
+
+                    &.small {
+                        font-size: 0.7rem;
+                    }
+
+                    &.medium {
+                        font-size: 0.8rem;
+                    }
+
+                    &.large {
+                        font-size: 1rem;
+                    }
+
+                    &.big {
+                        font-size: 1.2rem;
+                    }
+                }
+            }
+
+            >.functions {
+                width: 0;
+                display: flex;
+                flex-direction: row-reverse;
+                align-items: center;
+                overflow: visible;
+
+                >.body {
+                    width: 0;
+                    transition: all 0.2s ease-in-out;
+                    display: flex;
+                    align-items: center;
+                    flex-wrap: nowrap;
+                    border-radius: 21px 0 0 21px;
+
+                    >:first-child {
+                        margin-left: 3px;
+                    }
+
+                    >* {
+                        margin-right: 5px;
+                    }
+                }
+            }
+
+
+        }
+
+        &.density-high {
+            >.row {
+                min-height: 28px;
+                margin-bottom: 1px;
+            }
+        }
+
+        &.density-medium {
+            >.row {
+                min-height: 38px;
+                margin-bottom: 4px;
+            }
+        }
+
+        &.density-low {
+            >.row {
+                min-height: 60px;
+                margin-bottom: 4px;
+            }
+        }
+    }
+
+    &.debug {
+        >.header {
+            background-color: orange;
+
+            >.cells {
+                >.cell:nth-child(even) {
+                    background-color: blue;
+                }
+
+                >.cell:nth-child(odd) {
+                    background-color: green;
+                }
+            }
+
+            >.scroll {
+                background-color: red;
+            }
+        }
+
+        >.body {
+            >.row {
+                background-color: orangered;
+
+                >.cells {
+                    >.cell:nth-child(even) {
+                        background-color: blue;
+                    }
+
+                    >.cell:nth-child(odd) {
+                        background-color: green;
+                    }
+                }
+            }
+        }
+    }
+}

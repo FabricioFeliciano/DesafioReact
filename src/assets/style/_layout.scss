@@ -1,0 +1,25 @@
+body {
+  padding: 80px 0 0 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: #fff;
+
+  main {
+    width: 80%;
+    margin: auto;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  body {
+    main {
+      width: 100% !important;
+    }
+  }
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 1rem;
+}

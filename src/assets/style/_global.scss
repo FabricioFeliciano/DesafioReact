@@ -1,0 +1,255 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+* {
+  box-sizing: border-box;
+
+  &:focus {
+    outline: none;
+  }
+
+  font-family: Ubuntu,
+  Verdana,
+  Geneva,
+  Tahoma,
+  sans-serif;
+
+  color: #000;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 5px 0 10px 0;
+}
+
+hr {
+  height: 1px;
+  background-color: #aaa;
+  border: 0;
+  margin: 20px 0;
+}
+
+//Margin
+.m {
+  @for $i from 1 through 100 {
+    &-#{$i} {
+      margin: #{$i*4}+'px';
+    }
+
+    &t-#{$i} {
+      margin-top: #{$i*4}+'px' !important;
+    }
+
+    &b-#{$i} {
+      margin-bottom: #{$i*4}+'px' !important;
+    }
+
+    &l-#{$i} {
+      margin-left: #{$i*4}+'px' !important;
+    }
+
+    &r-#{$i} {
+      margin-right: #{$i*4}+'px' !important;
+    }
+
+    &v-#{$i} {
+      margin-top: #{$i*4}+'px' !important;
+      margin-bottom: #{$i*4}+'px' !important;
+    }
+
+    &h-#{$i} {
+      margin-left: #{$i*4}+'px' !important;
+      margin-right: #{$i*4}+'px' !important;
+    }
+  }
+}
+
+
+
+
+//Padding
+
+.p {
+  @for $i from 0 through 100 {
+    &-#{$i} {
+      padding: #{$i*4}+'px' !important;
+    }
+
+    &t-#{$i} {
+      padding-top: #{$i*4}+'px' !important;
+    }
+
+    &b-#{$i} {
+      padding-bottom: #{$i*4}+'px' !important;
+    }
+
+    &l-#{$i} {
+      padding-left: #{$i*4}+'px' !important;
+    }
+
+    &r-#{$i} {
+      padding-right: #{$i*4}+'px' !important;
+    }
+
+    &v-#{$i} {
+      padding-top: #{$i*4}+'px' !important;
+      padding-bottom: #{$i*4}+'px' !important;
+    }
+
+    &h-#{$i} {
+      padding-left: #{$i*4}+'px' !important;
+      padding-right: #{$i*4}+'px' !important;
+    }
+
+    &v-#{$i}p {
+      padding-top: #{$i}+'%' !important;
+      padding-bottom: #{$i}+'%' !important;
+    }
+
+    &h-#{$i}p {
+      padding-left: #{$i}+'%' !important;
+      padding-right: #{$i}+'%' !important;
+    }
+  }
+}
+
+//Width e Height
+@for $i from 0 through 100 {
+  .w-#{$i*4} {
+    width: #{$i*4}+'px' !important;
+  }
+
+  .w-#{$i}p {
+    width: #{$i}+'%' !important;
+  }
+
+  .w-#{$i}v {
+    width: #{$i}vw !important;
+  }
+
+  .h-#{$i*4} {
+    height: #{$i*4}+'px' !important;
+  }
+
+  .h-#{$i}p {
+    height: #{$i}+'%' !important;
+  }
+
+  .h-#{$i}v {
+    height: #{$i}vh !important;
+  }
+}
+
+.scroll {
+
+  &-x {
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  &-y {
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+}
+
+*[class*="scroll"] {
+  &::-webkit-scrollbar {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 0.25rem;
+    background-color: #fafafa;
+    z-index: 99;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #ddd;
+    border-radius: 0.25rem;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: #ececec;
+  }
+
+  &::-webkit-scrollbar-track {
+    border-radius: 0.25rem;
+  }
+}
+
+//Font-size
+.font {
+  @for $i from 1 through 400 {
+    &-#{$i} {
+      font-size: #{$i}+'px';
+    }
+  }
+
+  @for $i from 1 through 400 {
+    &-l-#{$i} {
+      line-height: #{$i}+'px' !important;
+    }
+  }
+
+  @for $i from 3 through 7 {
+    &-w-#{$i*100} {
+      font-weight: #{$i*100} !important;
+    }
+  }
+}
+
+//Shadow
+.shadow {
+
+  &-black {
+    filter: drop-shadow(0 0 20px #000);
+  }
+
+  &-white {
+    filter: drop-shadow(0 0 20px #fff);
+  }
+
+  &-primary {
+    filter: drop-shadow(0 0 20px $primary);
+  }
+
+  &-secondary {
+    filter: drop-shadow(0 0 20px $secondary);
+  }
+
+  &-success {
+    filter: drop-shadow(0 0 20px $success);
+  }
+
+  &-warning {
+    filter: drop-shadow(0 0 20px $warning);
+  }
+
+  &-danger {
+    filter: drop-shadow(0 0 20px $danger);
+  }
+}
+
+.font {
+  &-primary {
+    color: $primaryDark;
+  }
+
+  &-secondary {
+    color: $secondaryDark;
+  }
+
+  &-success {
+    color: $successDark;
+  }
+
+  &-warning {
+    color: $warningDark;
+  }
+
+  &-danger {
+    color: $dangerDark;
+  }
+}
